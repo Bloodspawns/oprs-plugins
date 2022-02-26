@@ -25,8 +25,20 @@
 
 rootProject.name = "external plugins example"
 
-include(":kotlinexample")
-include(":javaexample")
+include(":accountmanager")
+include(":animatedloginscreen")
+include(":entityhiderextension")
+include(":menuswapsb")
+include(":modelreplacer")
+include(":nightmare")
+include(":npchighlightb")
+include(":outgoingchatfilter")
+include(":reorderprayers")
+include(":shiftwalker")
+include(":tmorph")
+include(":zcustomswapper")
+include(":zgauntlet")
+include(":ztob")
 
 for (project in rootProject.children) {
     project.apply {

@@ -41,8 +41,8 @@ open class BootstrapTask : DefaultTask() {
             bootstrapReleaseDir.mkdirs()
 
             val plugins = ArrayList<JSONObject>()
-            val baseBootstrap = getBootstrap("$bootstrapDir/plugins.json") ?: throw RuntimeException("Base bootstrap is null!")
-
+            val baseBootstrap1 = getBootstrap("$bootstrapDir/plugins.json") ?: throw RuntimeException("Base bootstrap is null!")
+            val baseBootstrap = baseBootstrap1[0] as JSONArray
             project.subprojects.forEach {
                 if (it.project.properties.containsKey("PluginName") && it.project.properties.containsKey("PluginDescription")) {
                     var pluginAdded = false
@@ -89,7 +89,7 @@ open class BootstrapTask : DefaultTask() {
                         plugins.add(pluginObject)
                     }
 
-                    plugin.copyTo(Paths.get(bootstrapReleaseDir.toString(), "${it.project.name}-${it.project.version}.jar").toFile())
+                    plugin.copyTo(Paths.get(bootstrapReleaseDir.toString(), "${it.project.name}-${it.project.version}.jar").toFile(), true)
                 }
             }
 
@@ -97,6 +97,5 @@ open class BootstrapTask : DefaultTask() {
                 out.println(plugins.toString())
             }
         }
-
     }
 }
