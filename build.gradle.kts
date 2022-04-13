@@ -8,16 +8,16 @@ plugins {
     checkstyle
 }
 
-project.extra["GithubUrl"] = "https://github.com/l2-/oprs-plugins"
-val releaseDir = "${rootProject.projectDir.parent}/l2-oprs-release"
+project.extra["GithubUrl"] = "https://github.com/Bloodspawns/oprs-plugins"
+val releaseDir = "${rootProject.projectDir.parent}/Bloodspawns-oprs-release"
 
 apply<BootstrapPlugin>()
 
 subprojects {
     group = "com.example"
 
-    project.extra["PluginProvider"] = "l2-"
-    project.extra["ProjectSupportUrl"] = "https://github.com/l2-/oprs-plugins"
+    project.extra["PluginProvider"] = "Bloodspawns"
+    project.extra["ProjectSupportUrl"] = "https://github.com/Bloodspawns/oprs-plugins"
     project.extra["PluginLicense"] = "3-Clause BSD License"
 
     repositories {
