@@ -242,7 +242,7 @@ public class MenuEntrySwapperPlugin extends Plugin
 				final String target = Text.removeTags(entry.getTarget()).toLowerCase();
 				int type = entry.getType().getId();
 
-				if (type != MenuAction.SPELL_CAST_ON_PLAYER.getId() ||
+				if (type != MenuAction.WIDGET_TARGET_ON_PLAYER.getId() ||
 						(!target.startsWith("ice b") && !target.startsWith("blood b")))
 				{
 					entries.add(entry);

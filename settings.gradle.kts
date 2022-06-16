@@ -27,7 +27,6 @@ rootProject.name = "external plugins example"
 
 include(":accountmanager")
 include(":animatedloginscreen")
-include(":entityhiderextension")
 include(":menuswapsb")
 include(":modelreplacer")
 include(":nightmare")
